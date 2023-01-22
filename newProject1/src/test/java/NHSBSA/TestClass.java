@@ -7,6 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import NHSBSA.utilities.Utilities;
+import PageObjects.CountryPage;
+import PageObjects.StartPage;
+
 
 public class TestClass extends TestBase {
 	
@@ -20,9 +23,19 @@ public class TestClass extends TestBase {
 		Utilities ul = new Utilities();
 		ul.acceptcookies();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//input[@id='next-button']")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//input[@id='radio-england']")).click();
+		//Parameterised constructor
+		StartPage sp = new StartPage(driver);
+		sp.clickStartNow();
+		CountryPage cp = new CountryPage(driver);
+		cp.selectRadioEngland();
+		Thread.sleep(3000);
+		cp.clickNext();
+		
+		
+
+
+		
+		
 
 		
 		

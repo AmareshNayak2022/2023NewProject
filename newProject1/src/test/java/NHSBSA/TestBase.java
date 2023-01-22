@@ -22,6 +22,7 @@ public class TestBase {
 		
 		String Browser = configProp.getProperty("Browser");
 		
+		
 		if(Browser.equals("chrome"))
 		{
 			driver = new ChromeDriver();
